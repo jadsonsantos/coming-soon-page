@@ -1,0 +1,19 @@
+{
+  "name": "coming-soon-page",
+  "version": "1.0.0",
+  "description": "Base Apparel coming soon page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jadsonsantos/coming-soon-page.git"
+  },
+  "author": "Jadson Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jadsonsantos/coming-soon-page/issues"
+  },
+  "homepage": "https://github.com/jadsonsantos/coming-soon-page#readme"
+}
