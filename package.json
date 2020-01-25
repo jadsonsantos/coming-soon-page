@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/jadsonsantos/coming-soon-page/issues"
   },
-  "homepage": "https://github.com/jadsonsantos/coming-soon-page#readme"
+  "homepage": "https://github.com/jadsonsantos/coming-soon-page#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.1"
+  }
 }
