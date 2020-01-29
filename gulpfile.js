@@ -10,7 +10,7 @@ function builHtml() {
                     doctype: 'html',
                     pretty: true
                 }))
-                .pipe(gulp.dest('./src/html/'))
+                .pipe(gulp.dest('./dist/html/'))
 }
 
 gulp.task('pug', builHtml);
@@ -35,7 +35,6 @@ gulp.task('browserSync', function() {
 gulp.task('watch', function() {
     gulp.watch('./src/scss/**/*.scss', compilaSass);
     gulp.watch('./src/views/**/*.pug', builHtml);
-    gulp.watch(['*.html']).on('change', browserSync.reload);
     gulp.watch(['./src/js/**/*.js']).on('change', browserSync.reload);
 });
 
