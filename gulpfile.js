@@ -27,7 +27,7 @@ gulp.task('sass', compilaSass);
 gulp.task('browserSync', function() {
     browserSync.init({
         server: {
-            baseDir: "./"
+            baseDir: "./dist/html/"
         }
     });
 });
