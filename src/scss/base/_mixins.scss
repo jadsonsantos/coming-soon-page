@@ -1,0 +1,5 @@
+@import "vars";
+
+@mixin background($filename, $position:0 0, $repeat: no-repeat) {
+    background: transparent url(#{$imagedir}#{$filename}) $repeat $position;
+}
