@@ -10,7 +10,7 @@ function builHtml() {
                     doctype: 'html',
                     pretty: true
                 }))
-                .pipe(gulp.dest('./dist/html/'))
+                .pipe(gulp.dest('./'))
 }
 
 gulp.task('pug', builHtml);
@@ -18,7 +18,7 @@ gulp.task('pug', builHtml);
 function compilaSass() {
     return gulp.src('./src/scss/**/*.scss')
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-    .pipe(gulp.dest('./dist/css/'))
+    .pipe(gulp.dest('./css/'))
     .pipe(browserSync.stream())
 }
 
@@ -27,7 +27,7 @@ gulp.task('sass', compilaSass);
 gulp.task('browserSync', function() {
     browserSync.init({
         server: {
-            baseDir: "./dist/html/"
+            baseDir: "./"
         }
     });
 });
@@ -35,6 +35,7 @@ gulp.task('browserSync', function() {
 gulp.task('watch', function() {
     gulp.watch('./src/scss/**/*.scss', compilaSass);
     gulp.watch('./src/views/**/*.pug', builHtml);
+    gulp.watch(['*.html']).on('change', browserSync.reload);
     gulp.watch(['./src/js/**/*.js']).on('change', browserSync.reload);
 });
 
