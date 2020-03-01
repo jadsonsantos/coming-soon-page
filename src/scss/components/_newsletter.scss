@@ -39,6 +39,10 @@
 			display: flex;
 		}
 
+		.field {
+			position: relative;
+		}
+
 		input {
 			border: 1px solid $color-primary-1;
 			border-radius: 50px;
@@ -68,7 +72,7 @@
 
 			&[type="submit"] {
 				position: absolute;
-				right: 30px;
+				right: 0;
 				padding: 15px 30px;
 				@include background("icon-arrow.svg", center center);
 				background-color: $color-primary-2;
