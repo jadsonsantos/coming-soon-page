@@ -6,25 +6,25 @@ const pug = require('gulp-pug');
 
 function builHtml() {
     return gulp.src('./src/views/*.pug')
-                .pipe(pug({
-                    doctype: 'html',
-                    pretty: true
-                }))
-                .pipe(gulp.dest('./'))
+        .pipe(pug({
+            doctype: 'html',
+            pretty: true
+        }))
+        .pipe(gulp.dest('./'))
 }
 
 gulp.task('pug', builHtml);
 
 function compilaSass() {
     return gulp.src('./src/scss/**/*.scss')
-    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-    .pipe(gulp.dest('./css/'))
-    .pipe(browserSync.stream())
+        .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+        .pipe(gulp.dest('./css/'))
+        .pipe(browserSync.stream())
 }
 
 gulp.task('sass', compilaSass);
 
-gulp.task('browserSync', function() {
+gulp.task('browserSync', function () {
     browserSync.init({
         server: {
             baseDir: "./"
@@ -32,7 +32,7 @@ gulp.task('browserSync', function() {
     });
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', function () {
     gulp.watch('./src/scss/**/*.scss', compilaSass);
     gulp.watch('./src/views/**/*.pug', builHtml);
     gulp.watch(['*.html']).on('change', browserSync.reload);
