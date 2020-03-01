@@ -1,2 +1,7 @@
 @import 'base/_main';
-@import "components/_main"
+@import "components/_main";
+
+.wrapper {
+    width: 375px;
+    margin: auto;
+}
