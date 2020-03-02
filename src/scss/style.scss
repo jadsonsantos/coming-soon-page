@@ -4,4 +4,8 @@
 .wrapper {
     width: 375px;
     margin: auto;
+
+    @include mq("desktop") {
+        width: 1440px;
+    }
 }

@@ -3,3 +3,22 @@
 @mixin background($filename, $position:0 0, $repeat: no-repeat) {
     background: transparent url(#{$imagedir}#{$filename}) $repeat $position;
 }
+
+
+// Media queries
+$breakpoints: (
+    "phone":        375px,
+    "desktop":      1440px
+);
+
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        // @if $type == max {
+        //     $width: $width - 1px;
+        // }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
