@@ -2,6 +2,9 @@ $font-1: "Josefin Sans", sans-serif;
 
 $imagedir: "/images/"; // define the base path before the mixin
 
+$gradient-1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+$gradient-2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
 $color-primary-1: hsl(0, 36%, 70%);
 $color-primary-2: hsl(0, 93%, 68%);
 $color-neutral: hsl(0, 6%, 24%);

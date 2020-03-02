@@ -2,6 +2,7 @@
 
 .site-news {
 	padding: 60px 30px 100px;
+	background: $gradient-1;
 
 	&__container {
 		text-align: center;
@@ -37,20 +38,29 @@
 
 		&-container {
 			display: flex;
-		}
-
-		.field {
 			position: relative;
 		}
 
-		input {
-			border: 1px solid $color-primary-1;
+		.field {
 			border-radius: 50px;
+
+			&:nth-child(2) {
+				position: absolute;
+				right: 0;
+				padding: 11px 25px;
+				background: $gradient-2;
+			}
+		}
+
+		input {
 			
 			&[type="email"] {
 				width: 315px;
-				padding: 15px 10px 15px 20px;
+				padding: 13px 10px 13px 20px;
+				border: 1px solid $color-primary-1;
+				background: $gradient-1;
 				font-family: $font-1;
+				font-size: 14px;
 				color: $color-primary-1;
 
 				&::placeholder {
@@ -71,11 +81,9 @@
 			}
 
 			&[type="submit"] {
-				position: absolute;
-				right: 0;
-				padding: 15px 30px;
 				@include background("icon-arrow.svg", center center);
-				background-color: $color-primary-2;
+				background-size: contain;
+				border: none;
 			}
 		}
 	}
