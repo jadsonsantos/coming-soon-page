@@ -1,11 +1,20 @@
 @import "base/_vars";
 
 .site-news {
-	padding: 60px 30px 100px;
-	background: $gradient-1;
+		
+	@include mq("desktop") {
+		padding: 50px 0 100px;
+	}
+	
+	@include mq("desktop", "max") {
+		background: $gradient-1;
+	}
 
 	&__container {
-		text-align: center;
+		
+		@include mq("desktop", "max") {
+			text-align: center;
+		}
 	}
 
 	&__text {
@@ -20,6 +29,10 @@
 			font-weight: 300;
 			color: $color-primary-1;
 
+		@include mq("desktop") {
+			font-size: 62px;
+		}
+
 			span {
 				display: block;
 				font-weight: 600;
@@ -31,6 +44,14 @@
 			font-size: 14px;
 			line-height: 2;
 			color: $color-primary-1;
+
+		@include mq("desktop") {
+			font-size: 16px;
+		}
+
+			span {
+				display: block;
+			}
 		}
 	}
 
@@ -39,6 +60,10 @@
 		&-container {
 			display: flex;
 			position: relative;
+
+			@include mq("desktop") {
+				width: 450px;
+			}
 		}
 
 		.field {
@@ -49,6 +74,10 @@
 				right: 0;
 				padding: 11px 25px;
 				background: $gradient-2;
+
+				@include mq("desktop") {
+					right: 30px;
+				}
 			}
 		}
 
@@ -77,6 +106,10 @@
 				&::-ms-input-placeholder {
 					/* Microsoft Edge */
 					color: $color-primary-1;
+				}
+
+				@include mq("desktop") {
+					width: 400px;
 				}
 			}
 
