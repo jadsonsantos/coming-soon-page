@@ -7,6 +7,7 @@
 	}
 	
 	@include mq("desktop", "max") {
+		padding: 60px 30px 100px;
 		background: $gradient-1;
 	}
 
@@ -29,9 +30,9 @@
 			font-weight: 300;
 			color: $color-primary-1;
 
-		@include mq("desktop") {
-			font-size: 62px;
-		}
+			@include mq("desktop") {
+				font-size: 62px;
+			}
 
 			span {
 				display: block;
@@ -45,12 +46,14 @@
 			line-height: 2;
 			color: $color-primary-1;
 
-		@include mq("desktop") {
-			font-size: 16px;
-		}
+			@include mq("desktop") {
+				font-size: 16px;
+			}
 
 			span {
-				display: block;
+				@include mq("desktop") {
+					display: block;
+				}
 			}
 		}
 	}
