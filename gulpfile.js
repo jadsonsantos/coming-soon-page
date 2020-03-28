@@ -24,6 +24,14 @@ function compilaSass() {
 
 gulp.task('sass', compilaSass);
 
+function gulpJs() {
+    return gulp.src('src/js/*.js')
+        .pipe(gulp.dest('./dist/js/'))
+        .pipe(browserSync.stream())
+}
+
+gulp.task('gulpJs', gulpJs);
+
 gulp.task('browserSync', function () {
     browserSync.init({
         server: {
@@ -36,7 +44,7 @@ gulp.task('watch', function () {
     gulp.watch('./src/scss/**/*.scss', compilaSass);
     gulp.watch('./src/views/**/*.pug', builHtml);
     gulp.watch(['*.html']).on('change', browserSync.reload);
-    gulp.watch(['./src/js/**/*.js']).on('change', browserSync.reload);
+    gulp.watch('./src/js/**/*.js', gulpJs);
 });
 
-gulp.task('default', gulp.parallel('watch', 'browserSync'));
+gulp.task('default', gulp.parallel('watch', 'browserSync', 'gulpJs'));
